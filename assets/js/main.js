@@ -2,34 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* --- Przełącznik jasny/ciemny motyw --- */
-  var THEME_KEY = 'kwt_theme';
-  var SUN_ICON = '<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>';
-  var MOON_ICON = '<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a7 7 0 0 0 10.3 10.3Z"/></svg>';
-  var themeToggles = document.querySelectorAll('[data-theme-toggle]');
-  function applyThemeIcon(theme) {
-    themeToggles.forEach(function (btn) {
-      btn.innerHTML = theme === 'light' ? MOON_ICON : SUN_ICON;
-      btn.setAttribute('aria-label', theme === 'light' ? 'Włącz tryb ciemny' : 'Włącz tryb jasny');
-    });
-  }
-  function setTheme(theme) {
-    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
-    else document.documentElement.removeAttribute('data-theme');
-    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
-    applyThemeIcon(theme);
-  }
-  if (themeToggles.length) {
-    var currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-    applyThemeIcon(currentTheme);
-    themeToggles.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-        setTheme(currentTheme);
-      });
-    });
-  }
-
   /* --- Header: cień po przewinięciu --- */
   var header = document.querySelector('.site-header');
   if (header) {
@@ -320,91 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
           submitBtn.textContent = originalText;
         });
     });
-  }
-
-  /* --- Galeria realizacji (zdjęcia) + lightbox --- */
-  var galleryGrid = document.getElementById('gallery-grid');
-  if (galleryGrid && window.KWT_GALLERY && window.KWT_GALLERY.length) {
-    var galleryBase = window.KWT_ASSET_BASE || '';
-    var galleryFallbackAlt = galleryGrid.getAttribute('data-fallback-alt') || '';
-    var galleryItems = window.KWT_GALLERY;
-
-    galleryItems.forEach(function (item, i) {
-      var tile = document.createElement('button');
-      tile.type = 'button';
-      tile.className = 'gallery-tile';
-      tile.setAttribute('data-index', i);
-      tile.setAttribute('aria-label', item.alt || galleryFallbackAlt);
-
-      var img = document.createElement('img');
-      img.src = galleryBase + item.src;
-      img.alt = '';
-      img.loading = 'lazy';
-      tile.appendChild(img);
-
-      tile.addEventListener('click', function () { openLightbox(i); });
-      galleryGrid.appendChild(tile);
-    });
-
-    var lightbox = document.querySelector('.lightbox');
-    var lightboxBackdrop = document.querySelector('[data-lightbox-backdrop]');
-    var lightboxStage = document.getElementById('lightbox-stage');
-    var lightboxReturnFocus = null;
-    var lightboxCurrentIndex = null;
-
-    function renderLightboxItem(index) {
-      var item = galleryItems[index];
-      lightboxStage.innerHTML = '';
-      var img2 = document.createElement('img');
-      img2.src = galleryBase + item.src;
-      img2.alt = item.alt || galleryFallbackAlt;
-      lightboxStage.appendChild(img2);
-    }
-
-    function stepLightbox(dir) {
-      var pos = (lightboxCurrentIndex + dir + galleryItems.length) % galleryItems.length;
-      openLightbox(pos);
-    }
-
-    function lightboxKeydown(e) {
-      if (e.key === 'Escape') { closeLightbox(); return; }
-      if (e.key === 'ArrowRight') { stepLightbox(1); return; }
-      if (e.key === 'ArrowLeft') { stepLightbox(-1); return; }
-      trapFocusKeydown(e, lightbox);
-    }
-
-    function openLightbox(index) {
-      lightboxCurrentIndex = index;
-      lightboxReturnFocus = document.activeElement;
-      renderLightboxItem(index);
-      if (lightboxBackdrop) lightboxBackdrop.classList.add('open');
-      if (lightbox) lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', lightboxKeydown);
-      setTimeout(function () {
-        var closeBtn = lightbox.querySelector('[data-lightbox="close"]');
-        if (closeBtn) closeBtn.focus();
-      }, 0);
-    }
-    function closeLightbox() {
-      if (lightboxBackdrop) lightboxBackdrop.classList.remove('open');
-      if (lightbox) lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-      lightboxStage.innerHTML = '';
-      document.removeEventListener('keydown', lightboxKeydown);
-      if (lightboxReturnFocus && typeof lightboxReturnFocus.focus === 'function') lightboxReturnFocus.focus();
-      lightboxReturnFocus = null;
-    }
-
-    if (lightbox) {
-      var lightboxCloseBtn = lightbox.querySelector('[data-lightbox="close"]');
-      if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
-      var lightboxPrevBtn = lightbox.querySelector('[data-lightbox="prev"]');
-      if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', function () { stepLightbox(-1); });
-      var lightboxNextBtn = lightbox.querySelector('[data-lightbox="next"]');
-      if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', function () { stepLightbox(1); });
-    }
-    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
   }
 
 });
