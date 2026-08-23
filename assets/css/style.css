@@ -1,5 +1,5 @@
 /* =========================================================
-   Kwiatomaty Polska - Import i wdrożenie kwiatomatów z Chin
+   VERO Vending Machines - Kwiatomaty i automaty vendingowe z Chin
    Styl spójny z kwiaciarnią "Masz Ci Kwiatek!":
    czerń premium + neonowy róż/magenta + srebro
    ========================================================= */
@@ -35,6 +35,37 @@
     0 0 0 4.5px var(--pink),
     0 16px 40px rgba(236,24,119,.5);
 }
+
+/* ---------- Tryb jasny (kwiatowy premium na bieli) ---------- */
+:root[data-theme="light"]{
+  --black:        #fdf6f9;
+  --black-soft:   #fbeaf1;
+  --black-card:   #ffffff;
+  --silver:       #3a2430;
+  --white:        #201319;
+  --gray:         #7a6470;
+  --gray-dim:     #8a7580;
+  --border:       rgba(32,19,25,.10);
+  --shadow:       0 20px 60px rgba(190,20,90,.14);
+  --ring-3d:
+    0 0 0 1px rgba(32,19,25,.10),
+    0 0 0 2.5px var(--pink-2),
+    0 0 0 4px var(--pink-dark),
+    0 10px 26px rgba(236,24,119,.14);
+  --ring-3d-hover:
+    0 0 0 1px rgba(32,19,25,.16),
+    0 0 0 2.5px var(--pink-2),
+    0 0 0 4.5px var(--pink),
+    0 16px 40px rgba(236,24,119,.24);
+}
+:root[data-theme="light"] .site-header{ background:rgba(255,255,255,.78); }
+:root[data-theme="light"] .site-header.scrolled{ background:rgba(255,255,255,.94); }
+:root[data-theme="light"] .mobile-nav{ background:#fffbfd; }
+:root[data-theme="light"] .section-alt{ background:var(--black-soft); }
+:root[data-theme="light"] .cta-band{ background:linear-gradient(120deg,#fbeaf1,#fff8fa 60%); }
+:root[data-theme="light"] .nav-toggle span{ background:var(--white); }
+:root[data-theme="light"] .hero h1{ text-shadow:none; }
+:root[data-theme="light"] .hero-visual svg rect[stroke="#0a0a0c"]{ fill:#fff; }
 
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; scroll-padding-top:110px; }
@@ -280,6 +311,22 @@ section{ padding:96px 0; position:relative; }
 .stat-row{ display:flex; gap:40px; margin-top:30px; flex-wrap:wrap; }
 .stat-row div strong{ display:block; font-family:var(--ff-head); font-size:2.2rem; color:var(--pink-2); }
 .stat-row div span{ font-size:.82rem; color:var(--gray); }
+
+/* ---------- Case study banner ---------- */
+.case-study{
+  border-radius:24px; border:1px solid rgba(236,24,119,.35);
+  background:radial-gradient(circle at 20% 20%, rgba(236,24,119,.16), transparent 55%), var(--black-card);
+  padding:48px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+}
+.case-study .tag{
+  display:inline-flex; align-items:center; gap:8px; background:var(--pink-btn-1); color:#fff; font-weight:700;
+  padding:6px 16px; border-radius:999px; font-size:.78rem; letter-spacing:.06em; margin-bottom:16px; text-transform:uppercase;
+}
+.case-study h2{ margin-bottom:14px; }
+.case-study-stats{ flex:0 0 auto; display:grid; gap:18px; }
+.case-study-stats div strong{ display:block; font-family:var(--ff-head); font-size:2rem; color:var(--pink-2); }
+.case-study-stats div span{ font-size:.8rem; color:var(--gray); }
+@media (max-width:640px){ .case-study{ padding:32px 22px; } }
 
 /* ---------- Steps ---------- */
 .steps{ counter-reset:step; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
@@ -551,7 +598,7 @@ html.js .reveal.in{ opacity:1; transform:translateY(0); }
 
 /* Mobile nav drawer */
 .mobile-nav{
-  position:fixed; inset:0; background:rgba(8,8,10,.98); z-index:250; display:flex; flex-direction:column;
+  position:fixed; inset:0; background:#08080a; isolation:isolate; z-index:250; display:flex; flex-direction:column;
   align-items:center; justify-content:center; gap:28px; transform:translateY(-100%); transition:transform .35s ease;
 }
 .mobile-nav.open{ transform:translateY(0); }

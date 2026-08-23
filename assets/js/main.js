@@ -1,6 +1,34 @@
-/* Kwiatomaty Polska - skrypty strony */
+/* VERO Vending Machines - skrypty strony */
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  /* --- Przełącznik jasny/ciemny motyw --- */
+  var THEME_KEY = 'kwt_theme';
+  var SUN_ICON = '<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>';
+  var MOON_ICON = '<svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a7 7 0 0 0 10.3 10.3Z"/></svg>';
+  var themeToggles = document.querySelectorAll('[data-theme-toggle]');
+  function applyThemeIcon(theme) {
+    themeToggles.forEach(function (btn) {
+      btn.innerHTML = theme === 'light' ? MOON_ICON : SUN_ICON;
+      btn.setAttribute('aria-label', theme === 'light' ? 'Włącz tryb ciemny' : 'Włącz tryb jasny');
+    });
+  }
+  function setTheme(theme) {
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    else document.documentElement.removeAttribute('data-theme');
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    applyThemeIcon(theme);
+  }
+  if (themeToggles.length) {
+    var currentTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    applyThemeIcon(currentTheme);
+    themeToggles.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(currentTheme);
+      });
+    });
+  }
 
   /* --- Header: cień po przewinięciu --- */
   var header = document.querySelector('.site-header');
