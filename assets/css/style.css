@@ -169,6 +169,22 @@ section{ padding:96px 0; position:relative; }
 }
 @media (min-width:901px){ .hero-badges{ flex-wrap:nowrap; } }
 
+.hero-photo{
+  background:
+    linear-gradient(180deg, rgba(20,8,15,.72), rgba(20,8,15,.58)),
+    url('../img/kwiatomat-hero.jpg') center 22% / cover no-repeat;
+}
+.hero-photo .hero-grid{ grid-template-columns:1fr; max-width:720px; }
+.hero-photo .hero-visual{ display:none; }
+.hero-photo .eyebrow{ color:var(--pink-2); }
+.hero-photo .eyebrow::before{ background:var(--pink-2); }
+.hero-photo h1{ color:#fff; }
+.hero-photo h1 span{ color:var(--pink-2); }
+.hero-photo p.lead{ color:rgba(255,255,255,.82); }
+.hero-photo .hero-badges div{ color:rgba(255,255,255,.75); }
+.hero-photo .hero-badges div strong{ color:#fff; }
+.hero-photo .btn-outline{ border-color:#fff; color:#fff; }
+
 .hero-visual{ position:relative; display:flex; align-items:center; justify-content:center; }
 .hero-visual .glow{ position:absolute; inset:6%; background:radial-gradient(circle, var(--pink-glow), transparent 68%); filter:blur(18px); }
 .hero-visual svg{ position:relative; z-index:1; width:100%; max-width:360px; }
