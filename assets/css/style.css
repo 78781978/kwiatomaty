@@ -6,7 +6,7 @@
    pudełkowych kart z neonową poświatą.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,420;1,9..144,500&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400..800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
 :root{
   --ground:      #faf4f3;
@@ -25,8 +25,8 @@
   --radius:      18px;
   --radius-sm:   10px;
   --shadow:      0 24px 60px -20px rgba(156,0,82,.20);
-  --ff-head: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-  --ff-body: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+  --ff-head: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --ff-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -67,7 +67,7 @@ h1{ font-size:clamp(2.5rem,5vw,4.1rem); font-weight:560; }
 h2{ font-size:clamp(1.8rem,3.2vw,2.5rem); }
 h3{ font-size:1.28rem; font-weight:560; }
 
-.grad-text{ color:var(--pink-deep); font-style:italic; }
+.grad-text{ color:var(--pink-deep); }
 p{ margin:0 0 1em; color:var(--ink-soft); }
 .container{ width:100%; max-width:1180px; margin:0 auto; padding:0 28px; }
 section{ padding:96px 0; position:relative; }
@@ -157,7 +157,7 @@ section{ padding:96px 0; position:relative; }
   padding-top:150px; padding-bottom:70px;
 }
 .hero-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:56px; align-items:center; position:relative; z-index:1; }
-.hero h1 span{ font-style:italic; color:var(--pink-deep); }
+.hero h1 span{ color:var(--pink-deep); }
 .hero p.lead{ font-size:1.1rem; color:var(--ink-soft); max-width:56ch; }
 .hero-cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:32px; }
 .hero-badges{ margin-top:52px; display:flex; flex-wrap:wrap; row-gap:14px; column-gap:24px; }
@@ -262,7 +262,7 @@ section{ padding:96px 0; position:relative; }
 
 .models{ margin-top:14px; }
 .model-row{ display:grid; grid-template-columns:1.05fr 2.5fr .85fr; gap:20px; align-items:baseline; padding:24px 0; }
-.model-row .tag{ font-family:var(--ff-head); font-style:italic; font-weight:560; font-size:1.3rem; color:var(--ink); }
+.model-row .tag{ font-family:var(--ff-head); font-weight:650; font-size:1.3rem; color:var(--ink); }
 .model-row .tag em{ font-style:normal; font-family:var(--ff-body); font-weight:700; font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; color:var(--pink-deep); margin-left:10px; vertical-align:middle; }
 .model-row .desc{ font-size:.92rem; color:var(--ink-soft); }
 .model-row .price{ text-align:right; font-weight:600; color:var(--pink-deep); font-size:.95rem; }
