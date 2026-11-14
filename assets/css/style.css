@@ -183,6 +183,16 @@ section{ padding:96px 0; position:relative; }
 }
 .icon-link:hover{ border-color:var(--pink); color:var(--pink-deep); background:#fff; }
 
+.lang-switch{ display:flex; align-items:center; gap:2px; font-size:.78rem; font-weight:600; }
+.lang-switch a{
+  color:var(--ink-soft); padding:5px 8px; border-radius:7px; letter-spacing:.02em;
+}
+.lang-switch a:hover{ background:var(--panel); color:var(--pink-deep); }
+.lang-switch a.active{ background:var(--pink); color:#fff; }
+.lang-switch a::after{ display:none; }
+.mobile-nav .lang-switch{ justify-content:center; margin-top:10px; font-size:.95rem; }
+@media (max-width:1320px){ .header-actions .lang-switch{ display:none; } }
+
 .nav-toggle{
   display:none; flex-direction:column; gap:5px; width:26px; background:none; border:0; cursor:pointer; padding:6px;
 }
@@ -556,6 +566,53 @@ section{ padding:96px 0; position:relative; }
   position:fixed; right:22px; bottom:22px; z-index:300; width:58px; height:58px; border-radius:50%;
   background:linear-gradient(135deg,var(--pink),var(--pink-deep)); display:flex; align-items:center; justify-content:center;
   box-shadow:0 12px 28px -6px rgba(156,0,82,.45); color:#fff;
+}
+
+/* ---------- Chatbot ---------- */
+.vero-chat-fab{
+  position:fixed; right:22px; bottom:92px; z-index:320; width:58px; height:58px; border-radius:50%;
+  background:var(--ink); border:0; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  color:#fff; box-shadow:0 12px 28px -6px rgba(37,21,39,.5); transition:transform .2s;
+}
+.vero-chat-fab:hover{ transform:scale(1.06); }
+.vero-chat-panel{
+  position:fixed; right:22px; bottom:160px; z-index:321; width:360px; max-width:calc(100vw - 32px);
+  height:min(520px, calc(100vh - 200px)); background:var(--card); border:1px solid var(--line-strong);
+  border-radius:var(--radius); box-shadow:var(--shadow); display:flex; flex-direction:column; overflow:hidden;
+  opacity:0; visibility:hidden; transform:translateY(16px); transition:all .25s ease;
+}
+.vero-chat-panel.open{ opacity:1; visibility:visible; transform:translateY(0); }
+.vero-chat-head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 18px;
+  background:linear-gradient(135deg,var(--pink),var(--pink-deep)); color:#fff; flex-shrink:0;
+}
+.vero-chat-head strong{ display:block; font-family:var(--ff-head); font-size:1.02rem; }
+.vero-chat-head span{ display:block; font-size:.76rem; opacity:.85; margin-top:2px; }
+.vero-chat-close{ background:none; border:0; color:#fff; font-size:1.4rem; line-height:1; cursor:pointer; padding:0 4px; }
+.vero-chat-body{ flex:1; overflow-y:auto; padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+.vero-msg{ max-width:88%; padding:10px 13px; border-radius:14px; font-size:.86rem; line-height:1.45; }
+.vero-msg-bot{ align-self:flex-start; background:var(--panel); color:var(--ink); border-bottom-left-radius:4px; }
+.vero-msg-user{ align-self:flex-end; background:var(--pink); color:#fff; border-bottom-right-radius:4px; }
+.vero-msg-note{ align-self:center; background:none; color:var(--ink-soft); font-size:.72rem; text-align:center; padding:0 6px; }
+.vero-fallback-link{ display:inline-block; margin-top:6px; color:var(--pink-deep); font-weight:600; }
+.vero-chat-quick{ display:flex; flex-wrap:wrap; gap:8px; padding:0 18px 12px; flex-shrink:0; }
+.vero-chip{
+  border:1px solid var(--line-strong); background:#fff; border-radius:20px; padding:7px 13px;
+  font-size:.78rem; color:var(--ink); cursor:pointer; transition:all .15s;
+}
+.vero-chip:hover{ border-color:var(--pink); color:var(--pink-deep); background:var(--panel); }
+.vero-chat-form{ display:flex; gap:8px; padding:14px 18px; border-top:1px solid var(--line); flex-shrink:0; }
+.vero-chat-form input{
+  flex:1; border:1px solid var(--line-strong); border-radius:10px; padding:10px 12px; font-size:.86rem; font-family:inherit;
+}
+.vero-chat-form button{
+  background:var(--pink); color:#fff; border:0; border-radius:10px; padding:10px 16px; font-weight:600;
+  font-size:.84rem; cursor:pointer; flex-shrink:0;
+}
+.vero-chat-form button:hover{ background:var(--pink-deep); }
+@media (max-width:640px){
+  .vero-chat-fab{ right:16px; bottom:84px; width:52px; height:52px; }
+  .vero-chat-panel{ right:16px; left:16px; width:auto; bottom:146px; }
 }
 
 /* ---------- Accessibility (WCAG) widget ---------- */
