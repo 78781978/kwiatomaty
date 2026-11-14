@@ -24,6 +24,56 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileNav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
   }
 
+  /* --- Slider na stronie głównej --- */
+  var slider = document.querySelector('.hero-slider');
+  if (slider) {
+    var slides = Array.prototype.slice.call(slider.querySelectorAll('.slide'));
+    var dotsWrap = slider.querySelector('.slider-dots');
+    var current = 0;
+    var timer = null;
+    function goTo(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, idx) { s.classList.toggle('active', idx === current); });
+      if (dotsWrap) {
+        Array.prototype.forEach.call(dotsWrap.children, function (d, idx) {
+          d.classList.toggle('active', idx === current);
+        });
+      }
+    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+    function restartAutoplay() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, 6000);
+    }
+    if (slides.length > 1) {
+      if (dotsWrap) {
+        slides.forEach(function (_, idx) {
+          var b = document.createElement('button');
+          if (idx === 0) b.classList.add('active');
+          b.setAttribute('aria-label', 'Pokaż slajd ' + (idx + 1));
+          b.addEventListener('click', function () { goTo(idx); restartAutoplay(); });
+          dotsWrap.appendChild(b);
+        });
+      }
+      var prevBtn = slider.querySelector('.slider-arrow.prev');
+      var nextBtn = slider.querySelector('.slider-arrow.next');
+      if (prevBtn) prevBtn.addEventListener('click', function () { prev(); restartAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { next(); restartAutoplay(); });
+      restartAutoplay();
+    }
+  }
+
+  /* --- Rozwijane podmenu "Nasze maszyny" w menu mobilnym --- */
+  document.querySelectorAll('.submenu-toggle').forEach(function (btn) {
+    var submenu = btn.nextElementSibling;
+    if (!submenu) return;
+    btn.addEventListener('click', function () {
+      var open = submenu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+    });
+  });
+
   /* --- Animacja pojawiania się sekcji --- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {

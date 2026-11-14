@@ -50,8 +50,18 @@
     </a>
     <nav class="main-nav">
       <a href="index.html" class="active">Start</a>
+      <div class="nav-dropdown">
+        <a href="oferta.html">Nasze maszyny</a>
+        <div class="nav-dropdown-menu">
+          <a href="oferta.html"><span class="emoji">🌸</span> Kwiatomaty</a>
+          <a href="automaty-przekaskowe.html"><span class="emoji">🍫</span> Automaty przekąskowe</a>
+          <a href="automaty-napojowe.html"><span class="emoji">🥤</span> Automaty z napojami</a>
+          <a href="automaty-jedzenie.html"><span class="emoji">🍜</span> Automaty z jedzeniem</a>
+          <a href="automaty-kosmetyczne.html"><span class="emoji">💄</span> Automaty kosmetyczne</a>
+          <a href="automaty-blindbox.html"><span class="emoji">🎁</span> Blind Box</a>
+        </div>
+      </div>
       <a href="o-nas.html">O nas</a>
-      <a href="oferta.html">Oferta</a>
   <a href="kontakt.html">Kontakt</a>
     </nav>
     <div class="header-actions">
@@ -65,80 +75,78 @@
 <div class="mobile-nav">
   <button class="close-nav" aria-label="Zamknij menu">✕</button>
   <a href="index.html">Start</a>
+  <button class="submenu-toggle">Nasze maszyny</button>
+  <div class="submenu">
+    <a href="oferta.html">🌸 Kwiatomaty</a>
+    <a href="automaty-przekaskowe.html">🍫 Automaty przekąskowe</a>
+    <a href="automaty-napojowe.html">🥤 Automaty z napojami</a>
+    <a href="automaty-jedzenie.html">🍜 Automaty z jedzeniem</a>
+    <a href="automaty-kosmetyczne.html">💄 Automaty kosmetyczne</a>
+    <a href="automaty-blindbox.html">🎁 Blind Box</a>
+  </div>
   <a href="o-nas.html">O nas</a>
-  <a href="oferta.html">Oferta</a>
   <a href="kontakt.html">Kontakt</a>
 </div>
 
 <main id="main">
 
-<!-- HERO -->
-<section class="hero hero-photo">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Dystrybutor kwiatomatów w Polsce</div>
-      <h1>Kwiatomat <span>dla Twojego biznesu</span></h1>
-      <p class="lead">Współpracuję bezpośrednio z fabryką w Chinach na podstawie podpisanej umowy dystrybucyjnej - to stała współpraca ze sprawdzonym producentem, nie przypadkowe pośrednictwo w pojedynczych zamówieniach. Kwiatomaty 8-komorowe już od 30 000 zł netto, z pełną obsługą całego procesu wdrożenia.</p>
-      <div class="hero-cta">
-        <a href="kontakt.html" class="btn btn-primary">Napisz do mnie</a>
-        <a href="oferta.html" class="btn btn-outline">Zobacz modele</a>
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+
+  <div class="slide active" style="background-image:linear-gradient(180deg, rgba(20,8,15,.55), rgba(20,8,15,.7)), url('assets/img/handshake-polska-chiny.jpg'); background-position:center 18%;">
+    <div class="container">
+      <div class="slide-content">
+        <div class="eyebrow">Polska i Chiny - stała współpraca</div>
+        <h1>VERO Vending Machines <span>- Twoja marka, moja odpowiedzialność</span></h1>
+        <p class="lead">Osobiście jeżdżę do fabryki w Chinach, żeby na miejscu sprawdzić produkcję i jakość każdego modelu, zanim trafi do Twojego biznesu. VERO to moja marka, rozwijana we współpracy ze sprawdzonym producentem - nie przypadkowe pośrednictwo w pojedynczych zamówieniach.</p>
+        <div class="hero-cta">
+          <a href="kontakt.html" class="btn btn-primary">Porozmawiajmy o Twoim biznesie</a>
+          <a href="o-nas.html" class="btn btn-outline">Poznaj moją historię</a>
+        </div>
       </div>
-      <div class="hero-badges">
-        <div><strong>Umowa</strong><span>dystrybucyjna z fabryką</span></div>
-        <div><strong>Od 30 000 zł</strong><span>kwiatomat 8-komorowy</span></div>
-        <div><strong>1 rok</strong><span>gwarancji + dożywotni serwis</span></div>
-        <div><strong>IX 2026</strong><span>premiera oferty</span></div>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="glow"></div>
-      <svg viewBox="0 0 420 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="70" y="60" width="280" height="360" rx="6" class="draw-path" stroke="#251527" stroke-width="1.6"/>
-        <line x1="70" y1="200" x2="350" y2="200" class="draw-path" stroke="#251527" stroke-opacity=".35" stroke-width="1"/>
-        <line x1="70" y1="320" x2="350" y2="320" class="draw-path" stroke="#251527" stroke-opacity=".35" stroke-width="1"/>
-        <g stroke="#EC1877" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M130 120c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <path class="draw-path" d="M118 142c2 10 12 16 24 12 2-10-6-20-16-22-6 2-10 6-8 10Z"/>
-          <path class="draw-path" d="M150 128c10 2 16 12 12 24-10 2-20-6-22-16 2-6 6-10 10-8Z"/>
-          <circle class="draw-path" cx="132" cy="136" r="6"/>
-          <line class="draw-path" x1="132" y1="142" x2="132" y2="196" stroke="#2F5D46"/>
-        </g>
-        <g stroke="#FF3F96" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M220 108c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <path class="draw-path" d="M208 130c2 10 12 16 24 12 2-10-6-20-16-22-6 2-10 6-8 10Z"/>
-          <circle class="draw-path" cx="222" cy="124" r="6"/>
-          <line class="draw-path" x1="222" y1="130" x2="222" y2="196" stroke="#2F5D46"/>
-        </g>
-        <g stroke="#EC1877" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M292 132c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <path class="draw-path" d="M280 154c2 10 12 16 24 12 2-10-6-20-16-22-6 2-10 6-8 10Z"/>
-          <path class="draw-path" d="M312 140c10 2 16 12 12 24-10 2-20-6-22-16 2-6 6-10 10-8Z"/>
-          <circle class="draw-path" cx="294" cy="148" r="6"/>
-          <line class="draw-path" x1="294" y1="154" x2="294" y2="196" stroke="#2F5D46"/>
-        </g>
-        <g stroke="#9C0052" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M170 240c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <circle class="draw-path" cx="172" cy="256" r="6"/>
-          <line class="draw-path" x1="172" y1="262" x2="172" y2="316" stroke="#2F5D46"/>
-        </g>
-        <g stroke="#EC1877" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M258 232c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <path class="draw-path" d="M246 254c2 10 12 16 24 12 2-10-6-20-16-22-6 2-10 6-8 10Z"/>
-          <circle class="draw-path" cx="260" cy="248" r="6"/>
-          <line class="draw-path" x1="260" y1="254" x2="260" y2="316" stroke="#2F5D46"/>
-        </g>
-        <g stroke="#FF3F96" stroke-width="1.4" fill="none">
-          <path class="draw-path" d="M138 308c-8 4-14 12-12 22 10 4 20-2 24-12-4-10-14-14-12-10Z"/>
-          <circle class="draw-path" cx="140" cy="324" r="6"/>
-          <line class="draw-path" x1="140" y1="330" x2="140" y2="316" stroke="#2F5D46"/>
-        </g>
-        <rect x="94" y="340" width="232" height="60" rx="4" class="draw-path" stroke="#251527" stroke-opacity=".5" stroke-width="1.2"/>
-        <rect x="110" y="352" width="70" height="20" rx="2" class="draw-path" stroke="#251527" stroke-opacity=".5" stroke-width="1"/>
-        <g stroke="#251527" stroke-opacity=".5"><circle class="draw-path" cx="255" cy="357" r="3"/><circle class="draw-path" cx="268" cy="357" r="3"/><circle class="draw-path" cx="281" cy="357" r="3"/><circle class="draw-path" cx="255" cy="369" r="3"/><circle class="draw-path" cx="268" cy="369" r="3"/><circle class="draw-path" cx="281" cy="369" r="3"/></g>
-        <rect x="94" y="416" width="232" height="10" rx="3" class="draw-path" stroke="#251527" stroke-opacity=".35" stroke-width="1"/>
-      </svg>
     </div>
   </div>
+
+  <div class="slide" style="background-image:linear-gradient(180deg, rgba(20,8,15,.72), rgba(20,8,15,.58)), url('assets/img/kwiatomat-hero.jpg'); background-position:center 22%;">
+    <div class="container">
+      <div class="slide-content">
+        <div class="eyebrow">Kwiaciarnia czynna 24/7</div>
+        <h1>Kwiatomat <span>dla Twojego biznesu</span></h1>
+        <p class="lead">Kwiatomaty 8-komorowe już od 30 000 zł netto, z pełną obsługą całego procesu wdrożenia - dobór modelu, projekt pod markę, transport, odprawa celna, montaż i szkolenie. Rok gwarancji fabrycznej i dożywotni serwis.</p>
+        <div class="hero-cta">
+          <a href="kontakt.html" class="btn btn-primary">Napisz do mnie</a>
+          <a href="oferta.html" class="btn btn-outline">Zobacz modele kwiatomatów</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="background:radial-gradient(ellipse 60% 55% at 12% 15%, rgba(236,24,119,.22), transparent 60%), radial-gradient(ellipse 55% 60% at 92% 5%, rgba(255,63,150,.18), transparent 55%), linear-gradient(160deg,#1c1320,#2a1a28);">
+    <div class="container" style="display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;">
+      <div class="slide-content">
+        <div class="eyebrow">Nie tylko kwiatomaty</div>
+        <h2>Szeroka oferta <span>automatów vendingowych</span></h2>
+        <p class="lead">Ta sama sprawdzona fabryka produkuje też automaty przekąskowe, z napojami, z jedzeniem, kosmetyczne oraz blind box - każdy z projektem wyglądu pod Twoją markę.</p>
+        <div class="hero-cta">
+          <a href="automaty-przekaskowe.html" class="btn btn-outline">Przekąskowe</a>
+          <a href="automaty-napojowe.html" class="btn btn-outline">Napoje</a>
+          <a href="automaty-jedzenie.html" class="btn btn-outline">Jedzenie</a>
+          <a href="automaty-kosmetyczne.html" class="btn btn-outline">Kosmetyczne</a>
+          <a href="automaty-blindbox.html" class="btn btn-outline">Blind Box</a>
+        </div>
+      </div>
+      <div class="hero-collage" aria-hidden="true">
+        <img src="assets/img/products/przekaskowy-1.jpg" alt="" loading="lazy">
+        <img src="assets/img/products/napojowy-2.jpg" alt="" loading="lazy">
+        <img src="assets/img/products/kosmetyczny-2.jpg" alt="" loading="lazy">
+        <img src="assets/img/products/blindbox-1.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <button class="slider-arrow prev" aria-label="Poprzedni slajd"><svg viewBox="0 0 24 24" width="1.2em" height="1.2em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="slider-arrow next" aria-label="Następny slajd"><svg viewBox="0 0 24 24" width="1.2em" height="1.2em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="slider-dots"></div>
 </section>
 
 <!-- USP BAR -->
@@ -208,6 +216,39 @@
   </div>
 </section>
 
+<!-- NIE TYLKO KWIATOMATY -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Nie tylko kwiatomaty</div>
+      <h2>Automaty vendingowe dla różnych branż</h2>
+      <p>Ta sama sprawdzona fabryka produkuje obudowy pod różne rodzaje sprzedaży - dobieram model i wyposażenie komór pod konkretny asortyment, zawsze z projektem wyglądu pod Twoją markę.</p>
+    </div>
+    <div class="grid grid-5">
+      <a href="automaty-przekaskowe.html" class="card-photo reveal">
+        <div class="card-photo-img"><img src="assets/img/products/przekaskowy-1.jpg" alt="Automat przekąskowy" loading="lazy"></div>
+        <div class="card-photo-text"><h3>Przekąskowe</h3><p>Automaty spiralowe na przekąski i słodycze.</p></div>
+      </a>
+      <a href="automaty-napojowe.html" class="card-photo reveal">
+        <div class="card-photo-img"><img src="assets/img/products/napojowy-1.jpg" alt="Automat z napojami" loading="lazy"></div>
+        <div class="card-photo-text"><h3>Z napojami</h3><p>Chłodzone automaty na napoje i wodę.</p></div>
+      </a>
+      <a href="automaty-jedzenie.html" class="card-photo reveal">
+        <div class="card-photo-img"><img src="assets/img/products/jedzenie-1.jpg" alt="Automat z jedzeniem" loading="lazy"></div>
+        <div class="card-photo-text"><h3>Z jedzeniem</h3><p>Automaty na gotowe dania i przekąski.</p></div>
+      </a>
+      <a href="automaty-kosmetyczne.html" class="card-photo reveal">
+        <div class="card-photo-img"><img src="assets/img/products/kosmetyczny-1.jpg" alt="Automat kosmetyczny" loading="lazy"></div>
+        <div class="card-photo-text"><h3>Kosmetyczne</h3><p>Kosmetyki i akcesoria beauty 24/7.</p></div>
+      </a>
+      <a href="automaty-blindbox.html" class="card-photo reveal">
+        <div class="card-photo-img"><img src="assets/img/products/blindbox-1.jpg" alt="Automat Blind Box" loading="lazy"></div>
+        <div class="card-photo-text"><h3>Blind Box</h3><p>Niespodzianki, figurki i gadżety.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- JAK TO DZIAŁA -->
 <section>
   <div class="container">
@@ -250,7 +291,12 @@
         <h4>Nawigacja</h4>
         <ul>
           <li><a href="o-nas.html">O nas</a></li>
-          <li><a href="oferta.html">Oferta</a></li>
+          <li><a href="oferta.html">Kwiatomaty</a></li>
+          <li><a href="automaty-przekaskowe.html">Automaty przekąskowe</a></li>
+          <li><a href="automaty-napojowe.html">Automaty z napojami</a></li>
+          <li><a href="automaty-jedzenie.html">Automaty z jedzeniem</a></li>
+          <li><a href="automaty-kosmetyczne.html">Automaty kosmetyczne</a></li>
+          <li><a href="automaty-blindbox.html">Blind Box</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
