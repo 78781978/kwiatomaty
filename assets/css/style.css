@@ -19,6 +19,9 @@
   --pink-2:      #ff3f96;
   --pink-deep:   #9c0052;
   --pink-glow:   rgba(236,24,119,.16);
+  --rose-gold:      #c9916f;
+  --rose-gold-deep: #9c6a45;
+  --rose-gold-glow: rgba(201,145,111,.22);
   --leaf:        #2f5d46;
   --line:        rgba(37,21,39,.14);
   --line-strong: rgba(37,21,39,.26);
@@ -255,11 +258,9 @@ section{ padding:96px 0; position:relative; }
 }
 @media (max-width:640px){ .slide{ align-items:flex-start; } }
 .slide.active{ opacity:1; visibility:visible; z-index:1; }
-.slide::before{
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(20,8,15,.72), rgba(20,8,15,.58));
-}
 .slide-content{ position:relative; z-index:2; max-width:760px; }
+.slide-content.align-right{ margin-left:auto; }
+@media (max-width:900px){ .slide-content.align-right{ margin-left:0; } }
 .slide .eyebrow{ color:var(--pink-2); }
 .slide .eyebrow::before{ background:var(--pink-2); }
 .slide h1, .slide h2{ color:#fff; margin-bottom:.4em; }
@@ -394,11 +395,14 @@ section{ padding:96px 0; position:relative; }
 .shelf-item p{ margin-top:6px; font-size:.86rem; }
 
 .models{ margin-top:14px; }
-.model-row{ display:grid; grid-template-columns:1.05fr 2.5fr .85fr; gap:20px; align-items:baseline; padding:24px 0; }
+.model-row{ display:grid; grid-template-columns:1.05fr 2.5fr .85fr; gap:20px; align-items:baseline; padding:24px 0; border-left:3px solid transparent; }
 .model-row .tag{ font-family:var(--ff-head); font-weight:650; font-size:1.3rem; color:var(--ink); }
 .model-row .tag em{ font-style:normal; font-family:var(--ff-body); font-weight:700; font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; color:var(--pink-deep); margin-left:10px; vertical-align:middle; }
+.model-row .tag.tag-premium{ color:var(--rose-gold-deep); letter-spacing:.02em; }
+.model-row.is-premium{ border-left-color:var(--rose-gold); padding-left:18px; background:linear-gradient(90deg, var(--rose-gold-glow), transparent 40%); }
 .model-row .desc{ font-size:.92rem; color:var(--ink-soft); }
 .model-row .price{ text-align:right; font-weight:600; color:var(--pink-deep); font-size:.95rem; }
+.model-row.is-premium .price{ color:var(--rose-gold-deep); }
 
 .shelf{ border-top:1px solid var(--line); }
 .shelf-thick{ border-top:1px solid var(--line-strong); }
