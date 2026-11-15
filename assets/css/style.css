@@ -259,8 +259,6 @@ section{ padding:96px 0; position:relative; }
 @media (max-width:640px){ .slide{ align-items:flex-start; } }
 .slide.active{ opacity:1; visibility:visible; z-index:1; }
 .slide-content{ position:relative; z-index:2; max-width:760px; }
-.slide-content.align-right{ margin-left:auto; }
-@media (max-width:900px){ .slide-content.align-right{ margin-left:0; } }
 .slide .eyebrow{ color:var(--pink-2); }
 .slide .eyebrow::before{ background:var(--pink-2); }
 .slide h1, .slide h2{ color:#fff; margin-bottom:.4em; }
